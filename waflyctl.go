@@ -1033,7 +1033,7 @@ func publisherConfig(apiEndpoint, apiKey, serviceID, wafID string, client fastly
 		Info.Printf("Read Total Pages: %d with %d rules", body.Meta.TotalPages, body.Meta.RecordCount)
 
 		// iterate through pages collecting all rules
-		for currentpage := currentpage + 1; currentpage <= totalpages; currentpage++ {
+		for currentpage := currentpage; currentpage <= totalpages; currentpage++ {
 
 			Info.Printf("Reading page: %d out of %d", currentpage, totalpages)
 			//set our API call
